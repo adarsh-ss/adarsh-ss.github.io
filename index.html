@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Adarsh S S | Salesforce Technical Consultant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;
+  --bg-section:#f9f8f6;
+  --surface:#ffffff;
+  --border:#eeece8;
+  --border-mid:#e2e0db;
+  --accent:#2563eb;
+  --accent-bg:#eff4ff;
+  --accent-mid:#bfdbfe;
+  --text:#0d0f12;
+  --text-mid:#4b5563;
+  --text-muted:#9ca3af;
+  --green:#059669;
+  --green-bg:#ecfdf5;
+  --radius:10px;
+  --max:760px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;height:54px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{font-size:0.9rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-0.01em}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-size:0.82rem;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover{color:var(--text)}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--text)}
+.mobile-menu{display:none;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--border)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:0.8rem 2rem;font-size:0.9rem;font-weight:500;color:var(--text-mid);text-decoration:none;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+
+/* ── CONTAINER ── */
+.container{max-width:var(--max);margin:0 auto;padding:0 2rem}
+
+/* ── HERO ── */
+#hero{padding:3.5rem 0 2.75rem;text-align:center;border-bottom:1px solid var(--border)}
+.avail-pill{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:var(--green-bg);color:var(--green);
+  font-size:0.72rem;font-weight:600;
+  padding:0.25rem 0.75rem;border-radius:20px;
+  margin-bottom:1rem;letter-spacing:0.02em;
+}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+h1{
+  font-size:clamp(2.2rem,6vw,3.2rem);
+  font-weight:800;letter-spacing:-0.04em;
+  color:var(--text);line-height:1.05;
+  margin-bottom:0.5rem;
+}
+.hero-role{
+  font-size:0.82rem;font-weight:600;
+  color:var(--accent);letter-spacing:0.1em;
+  text-transform:uppercase;margin-bottom:1.25rem;
+}
+.hero-bio{
+  font-size:1rem;color:var(--text-mid);
+  line-height:1.75;max-width:520px;
+  margin:0 auto 1.5rem;
+}
+.hero-stats{
+  display:flex;justify-content:center;
+  gap:1.75rem;margin-bottom:1.5rem;
+}
+.stat{}
+.stat-n{font-size:1.6rem;font-weight:800;color:var(--text);line-height:1;letter-spacing:-0.03em}
+.stat-l{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+.hero-links{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  padding:0.55rem 1.2rem;border-radius:7px;
+  font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;
+  text-decoration:none;transition:all 0.15s;cursor:pointer;border:none;
+}
+.btn-solid{background:var(--text);color:#fff}
+.btn-solid:hover{background:#1f2937}
+.btn-outline{background:transparent;color:var(--text-mid);border:1px solid var(--border-mid)}
+.btn-outline:hover{border-color:var(--text);color:var(--text)}
+
+/* ── SECTIONS ── */
+section{padding:2.75rem 0}
+section+section{border-top:1px solid var(--border)}
+.section-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.68rem;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:0.14em;
+  text-align:center;margin-bottom:0.5rem;
+}
+.section-title{
+  font-size:1.5rem;font-weight:800;
+  letter-spacing:-0.03em;color:var(--text);
+  text-align:center;margin-bottom:2.5rem;
+}
+
+/* ── WHAT I DO ── */
+.capabilities{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.cap-card{
+  background:var(--bg-section);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.4rem;
+  transition:border-color 0.15s;
+}
+.cap-card:hover{border-color:var(--accent-mid)}
+.cap-icon{font-size:1.25rem;margin-bottom:0.75rem}
+.cap-title{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.4rem}
+.cap-body{font-size:0.84rem;color:var(--text-mid);line-height:1.65}
+
+/* ── PROJECTS ── */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.project-card{
+  background:var(--bg-section);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.4rem;
+  display:flex;flex-direction:column;gap:0.55rem;
+  transition:border-color 0.15s,transform 0.15s;
+}
+.project-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.project-stripe{height:2px;border-radius:2px;margin:-1.4rem -1.4rem 0;border-radius:var(--radius) var(--radius) 0 0}
+.project-name{font-size:0.95rem;font-weight:700;color:var(--text);line-height:1.3}
+.project-industry{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.68rem;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:0.07em;
+}
+.project-stack{display:flex;flex-wrap:wrap;gap:0.3rem}
+.stack-tag{
+  background:var(--accent-bg);color:var(--accent);
+  font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+  padding:0.18rem 0.5rem;border-radius:4px;
+}
+.project-desc{font-size:0.84rem;color:var(--text-mid);line-height:1.65}
+.project-impact{
+  font-size:0.82rem;font-weight:600;color:var(--text);
+  padding-top:0.6rem;border-top:1px solid var(--border);
+}
+.project-impact::before{content:'↗  ';color:var(--accent)}
+
+/* ── SKILLS ── */
+.skills-wrap{background:var(--bg-section);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem}
+.skill-group{margin-bottom:0.9rem}
+.skill-group:last-child{margin-bottom:0}
+.skill-divider{height:1px;background:var(--border);margin:0.75rem 0}
+.skill-group-label{font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tag{
+  background:#fff;border:1px solid var(--border-mid);
+  font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+  color:var(--text);padding:0.28rem 0.65rem;border-radius:5px;
+  transition:border-color 0.15s,color 0.15s;
+}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── CERTIFICATIONS ── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0.65rem}
+.cert-item{
+  background:var(--bg-section);border:1px solid var(--border);
+  border-radius:8px;padding:0.8rem 1rem;
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.84rem;font-weight:500;color:var(--text);
+  transition:border-color 0.15s;
+}
+.cert-item:hover{border-color:var(--accent)}
+.cert-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* ── EDUCATION ── */
+.edu-row{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:1.25rem 1.5rem;
+  background:var(--bg-section);border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+.edu-degree{font-size:0.95rem;font-weight:600;color:var(--text)}
+.edu-school{font-size:0.82rem;color:var(--text-mid);margin-top:0.15rem}
+.edu-year{font-size:0.75rem;color:var(--text-muted);margin-top:0.1rem}
+.edu-gpa{
+  font-size:1.1rem;font-weight:800;color:var(--text-muted);
+  white-space:nowrap;flex-shrink:0;letter-spacing:-0.02em;
+}
+.edu-gpa small{font-size:0.7rem;font-weight:400;color:var(--text-muted);display:block;text-align:right;margin-top:1px}
+
+/* ── CONTACT CTA ── */
+.contact-cta{
+  text-align:center;padding:3rem 0;
+  background:var(--bg);border-top:1px solid var(--border);
+}
+.contact-cta-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.68rem;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:0.14em;
+  margin-bottom:0.5rem;
+}
+.contact-cta-heading{
+  font-size:1.5rem;font-weight:800;
+  letter-spacing:-0.03em;color:var(--text);
+  margin-bottom:0.6rem;
+}
+.contact-cta-sub{
+  font-size:0.9rem;color:var(--text-mid);
+  max-width:420px;margin:0 auto 1.5rem;line-height:1.7;
+}
+.contact-cta-links{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:0.6rem;flex-wrap:wrap}
+.footer-links a{font-size:0.82rem;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
+.footer-links a:hover{color:var(--accent)}
+.footer-copy{font-size:0.75rem;color:var(--border-mid)}
+
+
+/* ── EXPERIENCE ZIGZAG ── */
+.exp-zigzag{position:relative;display:flex;flex-direction:column;gap:0}
+.exp-axis{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border-mid);transform:translateX(-50%);z-index:0}
+.exp-row{display:grid;grid-template-columns:1fr 32px 1fr;align-items:start;gap:0;position:relative;padding:0 0 2rem}
+.exp-row:last-child{padding-bottom:0}
+.exp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem}
+.exp-card-current{border-color:var(--accent)}
+.exp-card-left{}
+.exp-card-right{}
+.exp-spacer{}
+.exp-dot-col{display:flex;justify-content:center;padding-top:1rem;z-index:1}
+.exp-dot{width:10px;height:10px;border-radius:50%;background:var(--border-mid);border:2px solid var(--bg-section)}
+.exp-dot-active{background:var(--accent);border-color:var(--bg-section)}
+.exp-co{font-size:0.97rem;font-weight:800;color:var(--text);letter-spacing:-0.02em;margin-bottom:2px}
+.exp-role{font-size:0.8rem;font-weight:600;color:var(--accent);margin-bottom:3px}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--text-muted);margin-bottom:0.6rem}
+.exp-desc{font-size:0.85rem;color:var(--text-mid);line-height:1.65}
+.exp-roles-list{display:flex;flex-direction:column;gap:2px;margin-top:0.65rem;padding-top:0.6rem;border-top:1px solid var(--border)}
+.exp-roles-list span{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--text-muted)}
+@media(max-width:700px){
+  .exp-axis{display:none}
+  .exp-zigzag{gap:0.75rem}
+  .exp-row{grid-template-columns:1fr;padding-bottom:0}
+  .exp-dot-col{display:none}
+  .exp-spacer{display:none}
+  .exp-card-left,.exp-card-right{grid-column:1}
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  #hero{padding:3.5rem 0 3rem}
+  .hero-stats{gap:1.5rem}
+  .capabilities{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .edu-row{flex-direction:column;align-items:flex-start;gap:0.5rem}
+  .edu-gpa{font-size:1rem}
+  .skills-wrap{padding:1.25rem}
+  section{padding:3rem 0}
+}
+@media(max-width:440px){
+  .container{padding:0 1.25rem}
+  nav{padding:0 1.25rem}
+  h1{font-size:2rem}
+  .hero-stats{gap:1rem}
+  .stat-n{font-size:1.3rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Adarsh S S</a>
+  <ul class="nav-links">
+    <li><a href="#what-i-do">What I do</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Open menu" onclick="document.getElementById('mmenu').classList.toggle('open')">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="#what-i-do" onclick="document.getElementById('mmenu').classList.remove('open')">What I do</a>
+  <a href="#projects" onclick="document.getElementById('mmenu').classList.remove('open')">Projects</a>
+  <a href="#skills" onclick="document.getElementById('mmenu').classList.remove('open')">Skills</a>
+  <a href="#experience" onclick="document.getElementById('mmenu').classList.remove('open')">Experience</a>
+  <a href="#certifications" onclick="document.getElementById('mmenu').classList.remove('open')">Certifications</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <h1>Adarsh S S</h1>
+    <p class="hero-role">Salesforce Technical Consultant</p>
+    <p class="hero-bio">I help enterprise teams turn complex business problems into Salesforce solutions, from scoping the right architecture to shipping it across Sales, Service, Experience, and AI clouds.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">3.5+</div><div class="stat-l">Years</div></div>
+      <div class="stat"><div class="stat-n">5×</div><div class="stat-l">Salesforce Certified</div></div>
+      <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Projects</div></div>
+      <div class="stat"><div class="stat-n">US · UK</div><div class="stat-l">Clients</div></div>
+    </div>
+    <div class="hero-links">
+      <a href="mailto:adarsh.ss8449@gmail.com" class="btn btn-solid">Get in touch</a>
+      <a href="https://www.linkedin.com/in/adarsh-s-s-278582275" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/adarsh-ss" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="what-i-do">
+  <div class="container">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">What I do</h2>
+    <div class="capabilities">
+      <div class="cap-card">
+        <div class="cap-icon">🔍</div>
+        <div class="cap-title">Solution Design</div>
+        <div class="cap-body">I work with clients to map out what they actually need: architecture, data model and integrations, before a of code is written. Feasibility-first, scalability-always.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🔗</div>
+        <div class="cap-title">Integration & Middleware</div>
+        <div class="cap-body">REST APIs, Python middleware on Heroku and GCP, cross-org frameworks, third-party platforms. I connect Salesforce to the rest of the stack cleanly.</div>
+      </div>
+      <div class="cap-card">
+        <div class="cap-icon">🤖</div>
+        <div class="cap-title">AI Automation</div>
+        <div class="cap-body">Agentforce, Vertex AI, Azure AI Document Intelligence, putting AI to work inside real business processes. Sentiment analysis, document extraction, intelligent scoring.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Technical profile</p>
+    <h2 class="section-title">Skills & stack</h2>
+    <div class="skills-wrap">
+      <div class="skill-group">
+        <div class="skill-group-label">Salesforce Development</div>
+        <div class="tags">
+          <span class="tag">Apex</span><span class="tag">Triggers</span><span class="tag">Async Apex</span><span class="tag">LWC</span><span class="tag">Aura Components</span><span class="tag">Visualforce</span><span class="tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-divider"></div>
+      <div class="skill-group">
+        <div class="skill-group-label">Salesforce Ecosystem</div>
+        <div class="tags">
+          <span class="tag">Sales Cloud</span><span class="tag">Service Cloud</span><span class="tag">Experience Cloud</span><span class="tag">Agentforce</span><span class="tag">Einstein CRM Analytics</span>
+        </div>
+      </div>
+      <div class="skill-divider"></div>
+      <div class="skill-group">
+        <div class="skill-group-label">Integrations & Middleware</div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Heroku</span><span class="tag">GCP</span><span class="tag">Azure AI Document Intelligence</span><span class="tag">Vertex AI (Gemini)</span>
+        </div>
+      </div>
+      <div class="skill-divider"></div>
+      <div class="skill-group">
+        <div class="skill-group-label">DevOps & Tooling</div>
+        <div class="tags">
+          <span class="tag">Gearset</span><span class="tag">Bitbucket</span><span class="tag">Git</span><span class="tag">Power Automate</span><span class="tag">Postman</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg-section)">
+  <div class="container">
+    <p class="section-label">Selected work</p>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-stripe" style="background:#2563eb"></div>
+        <div class="project-name">WhatsApp–Salesforce Integration</div>
+        <div class="project-industry">AppExchange · SaaS · Global</div>
+        <div class="project-stack">
+          <span class="stack-tag">Apex</span><span class="stack-tag">LWC</span><span class="stack-tag">Platform Events</span><span class="stack-tag">OAuth 2.0</span>
+        </div>
+        <div class="project-desc">Native event-driven Salesforce app enabling real-time WhatsApp messaging. Passed Salesforce Security Review and published as a managed AppExchange product.</div>
+        <div class="project-impact">Published on AppExchange, live for global enterprise clients</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-stripe" style="background:#0d9488"></div>
+        <div class="project-name">Call Classification & AI Quality Scoring</div>
+        <div class="project-industry">Travel & Tourism · USA</div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">GCP Cloud Run</span><span class="stack-tag">Firestore</span><span class="stack-tag">Vertex AI</span>
+        </div>
+        <div class="project-desc">GCP middleware ingesting call logs and recordings, staging data in Firestore, and running AI-driven sentiment analysis and intent classification back into Salesforce.</div>
+        <div class="project-impact">+15% conversion rate from targeted sales coaching</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-stripe" style="background:#d97706"></div>
+        <div class="project-name">Accounts Payable & Month-End Automation</div>
+        <div class="project-industry">Construction · USA</div>
+        <div class="project-stack">
+          <span class="stack-tag">Apex</span><span class="stack-tag">LWC</span><span class="stack-tag">Heroku</span><span class="stack-tag">Azure AI</span>
+        </div>
+        <div class="project-desc">End-to-end financial workflow automating invoice extraction via Azure AI Document Intelligence, payment orchestration through Python/Heroku middleware, and CI/CD across sandbox-to-production.</div>
+        <div class="project-impact">50% reduction in manual accounting effort</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-stripe" style="background:#7c3aed"></div>
+        <div class="project-name">Cross-Org Distributed Case Resolution</div>
+        <div class="project-industry">Logistics · Europe</div>
+        <div class="project-stack">
+          <span class="stack-tag">Apex</span><span class="stack-tag">REST APIs</span><span class="stack-tag">LWC</span>
+        </div>
+        <div class="project-desc">REST-based cross-org framework enabling direct case sync between country-specific Business Unit orgs, eliminating the bottleneck of a central routing org.</div>
+        <div class="project-impact">Eliminated central routing org dependency across European BUs</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-stripe" style="background:#475569"></div>
+        <div class="project-name">SharePoint & MS Teams Integration</div>
+        <div class="project-industry">Construction · USA</div>
+        <div class="project-stack">
+          <span class="stack-tag">Files Connect</span><span class="stack-tag">REST APIs</span><span class="stack-tag">Power Automate</span>
+        </div>
+        <div class="project-desc">SharePoint as external file storage via Files Connect with a structured directory model. Power Automate drives MS Teams approvals on Salesforce record changes.</div>
+        <div class="project-impact">Audit-ready document layer with cross-system approval workflows</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-stripe" style="background:#e11d48"></div>
+        <div class="project-name">Einstein CRM Analytics Implementation</div>
+        <div class="project-industry">Construction · USA</div>
+        <div class="project-stack">
+          <span class="stack-tag">SAQL</span><span class="stack-tag">Recipe</span><span class="stack-tag">Data Flow</span><span class="stack-tag">Einstein Analytics</span>
+        </div>
+        <div class="project-desc">SAQL-based pipelines and transformations modelling multi-source Salesforce data into optimised executive dashboards and structured analytical datasets.</div>
+        <div class="project-impact">Executive analytics across multi-source Salesforce data</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg-section)">
+  <div class="container">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-zigzag">
+
+      <div class="exp-axis"></div>
+
+      <div class="exp-row">
+        <div class="exp-card exp-card-left exp-card-current">
+          <div class="exp-co">Inno Valley Works</div>
+          <div class="exp-role">Senior Salesforce Developer</div>
+          <div class="exp-period">May 2023 – Present · Coimbatore</div>
+          <div class="exp-desc">Enterprise Salesforce solutions for US and UK clients, from architecture through delivery. AppExchange product, AI automation across GCP and Azure, cross-org integration frameworks.</div>
+          <div class="exp-roles-list">
+            <span>Sr. Salesforce Developer, Apr 2025</span>
+            <span>Salesforce Developer, Aug 2023</span>
+            <span>Salesforce Trainee, May 2023</span>
+          </div>
+        </div>
+        <div class="exp-dot-col"><div class="exp-dot exp-dot-active"></div></div>
+        <div class="exp-spacer"></div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-spacer"></div>
+        <div class="exp-dot-col"><div class="exp-dot"></div></div>
+        <div class="exp-card exp-card-right">
+          <div class="exp-co">Freelance PLC Programmer</div>
+          <div class="exp-role">Industrial Automation</div>
+          <div class="exp-period">Nov 2021 – Apr 2023</div>
+          <div class="exp-desc">Industrial automation for manufacturing clients using Fuji PLC systems, IoT sensors, and custom control logic. Where I learned to own a project end to end: real machinery, real stakes.</div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-card exp-card-left">
+          <div class="exp-co">Zoho Corporation</div>
+          <div class="exp-role">Member Technical Staff</div>
+          <div class="exp-period">Feb – Oct 2021 · Chennai</div>
+          <div class="exp-desc">Where my engineering foundation was built. Developed a full-stack web application using Ember.js, Java, and PostgreSQL inside one of India's largest SaaS companies.</div>
+        </div>
+        <div class="exp-dot-col"><div class="exp-dot"></div></div>
+        <div class="exp-spacer"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <p class="section-label">Verified expertise</p>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+      <div class="cert-item"><span class="cert-dot"></span>Salesforce Certified Agentforce Specialist</div>
+      <div class="cert-item"><span class="cert-dot"></span>Salesforce Certified Experience Cloud Consultant</div>
+      <div class="cert-item"><span class="cert-dot"></span>Salesforce Certified Platform Developer II</div>
+      <div class="cert-item"><span class="cert-dot"></span>Salesforce Certified Platform Developer I</div>
+      <div class="cert-item"><span class="cert-dot"></span>Salesforce Certified Administrator</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION - quiet row at the bottom -->
+<section style="padding:1.75rem 0;border-top:1px solid var(--border)">
+  <div class="container">
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">B.E. in Mechatronics Engineering</div>
+        <div class="edu-school">Bannari Amman Institute of Technology, Tamil Nadu</div>
+        <div class="edu-year">2017 – 2021</div>
+      </div>
+      <div class="edu-gpa">9.18 / 10<small>CGPA</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<div class="contact-cta">
+  <div class="container">
+    <p class="contact-cta-label">Let's talk</p>
+    <h2 class="contact-cta-heading">Want to reach out?</h2>
+    <p class="contact-cta-sub">Have an exciting opportunity you think I'd be a great fit for? I'd love to hear about it.</p>
+    <div class="contact-cta-links">
+      <a href="mailto:adarsh.ss8449@gmail.com" class="btn btn-solid">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        Email me
+      </a>
+      <a href="https://www.linkedin.com/in/adarsh-s-s-278582275" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="mailto:adarsh.ss8449@gmail.com">adarsh.ss8449@gmail.com</a>
+      <a href="https://www.linkedin.com/in/adarsh-s-s-278582275" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/adarsh-ss" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-copy">Adarsh S S · Coimbatore, Tamil Nadu</div>
+  </div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        links.forEach(a => a.style.color = a.getAttribute('href')==='#'+e.target.id ? 'var(--text)' : '');
+      }
+    });
+  },{threshold:0.4});
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
