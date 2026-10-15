@@ -154,6 +154,7 @@ section+section{border-top:1px solid var(--border)}
 .project-impact{
   font-size:0.82rem;font-weight:600;color:var(--text);
   padding-top:0.6rem;border-top:1px solid var(--border);
+  margin-top:auto;
 }
 .project-impact::before{content:'↗  ';color:var(--accent)}
 
@@ -228,7 +229,6 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
 .footer-links a{font-size:0.82rem;color:var(--text-muted);text-decoration:none;transition:color 0.15s}
 .footer-links a:hover{color:var(--accent)}
 .footer-copy{font-size:0.75rem;color:var(--border-mid)}
-
 
 /* ── EXPERIENCE ZIGZAG ── */
 .exp-zigzag{position:relative;display:flex;flex-direction:column;gap:0}
@@ -313,7 +313,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
     <div class="hero-stats">
       <div class="stat"><div class="stat-n">3.5+</div><div class="stat-l">Years</div></div>
       <div class="stat"><div class="stat-n">5×</div><div class="stat-l">Salesforce Certified</div></div>
-      <div class="stat"><div class="stat-n">6+</div><div class="stat-l">Projects</div></div>
+      <div class="stat"><div class="stat-n">8+</div><div class="stat-l">Projects</div></div>
       <div class="stat"><div class="stat-n">US · UK</div><div class="stat-l">Clients</div></div>
     </div>
     <div class="hero-links">
@@ -333,7 +333,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
       <div class="cap-card">
         <div class="cap-icon">🔍</div>
         <div class="cap-title">Solution Design</div>
-        <div class="cap-body">I work with clients to map out what they actually need: architecture, data model and integrations, before a of code is written. Feasibility-first, scalability-always.</div>
+        <div class="cap-body">I work with clients to map out what they actually need: architecture, data model and integrations, before a line of code is written. Feasibility-first, scalability-always.</div>
       </div>
       <div class="cap-card">
         <div class="cap-icon">🔗</div>
@@ -372,7 +372,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
       <div class="skill-group">
         <div class="skill-group-label">Integrations & Middleware</div>
         <div class="tags">
-          <span class="tag">Python</span><span class="tag">Heroku</span><span class="tag">GCP</span><span class="tag">Azure AI Document Intelligence</span><span class="tag">Vertex AI (Gemini)</span>
+          <span class="tag">Python</span><span class="tag">Heroku</span><span class="tag">GCP</span><span class="tag">Azure AI Document Intelligence</span><span class="tag">Vertex AI (Gemini)</span><span class="tag">Basis Theory</span><span class="tag">Authorize.net</span>
         </div>
       </div>
       <div class="skill-divider"></div>
@@ -393,6 +393,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
     <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
 
+      <!-- 1 -->
       <div class="project-card">
         <div class="project-stripe" style="background:#2563eb"></div>
         <div class="project-name">WhatsApp–Salesforce Integration</div>
@@ -404,6 +405,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
         <div class="project-impact">Published on AppExchange, live for global enterprise clients</div>
       </div>
 
+      <!-- 2 -->
       <div class="project-card">
         <div class="project-stripe" style="background:#0d9488"></div>
         <div class="project-name">Call Classification & AI Quality Scoring</div>
@@ -415,6 +417,31 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
         <div class="project-impact">+15% conversion rate from targeted sales coaching</div>
       </div>
 
+      <!-- 3 — NEW -->
+      <div class="project-card">
+        <div class="project-stripe" style="background:#0ea5e9"></div>
+        <div class="project-name">PCI-Compliant Card Storage & Payments</div>
+        <div class="project-industry">Travel & Tourism · USA</div>
+        <div class="project-stack">
+          <span class="stack-tag">Apex</span><span class="stack-tag">LWC</span><span class="stack-tag">Basis Theory</span><span class="stack-tag">Authorize.net</span><span class="stack-tag">REST APIs</span>
+        </div>
+        <div class="project-desc">PCI-compliant card vault using Basis Theory, ensuring Salesforce never handles raw card data. Authorize.net gateway integration routes payments through the Basis Theory Proxy for inline detokenisation before processing.</div>
+        <div class="project-impact">PCI compliance achieved without storing card data in Salesforce</div>
+      </div>
+
+      <!-- 4 — NEW -->
+      <div class="project-card">
+        <div class="project-stripe" style="background:#10b981"></div>
+        <div class="project-name">Accounting Seed Implementation & QuickBooks Migration</div>
+        <div class="project-industry">Travel & Tourism · USA</div>
+        <div class="project-stack">
+          <span class="stack-tag">Apex</span><span class="stack-tag">Accounting Seed</span><span class="stack-tag">LWC</span><span class="stack-tag">REST APIs</span>
+        </div>
+        <div class="project-desc">Implemented Accounting Seed as the native Salesforce accounting layer, replacing QuickBooks. Executed a full data migration covering chart of accounts, historical transactions, and open balances, consolidating financial operations entirely within the platform.</div>
+        <div class="project-impact">Eliminated QuickBooks dependency; end-to-end accounting within Salesforce</div>
+      </div>
+
+      <!-- 5 -->
       <div class="project-card">
         <div class="project-stripe" style="background:#d97706"></div>
         <div class="project-name">Accounts Payable & Month-End Automation</div>
@@ -426,6 +453,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
         <div class="project-impact">50% reduction in manual accounting effort</div>
       </div>
 
+      <!-- 6 -->
       <div class="project-card">
         <div class="project-stripe" style="background:#7c3aed"></div>
         <div class="project-name">Cross-Org Distributed Case Resolution</div>
@@ -437,6 +465,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
         <div class="project-impact">Eliminated central routing org dependency across European BUs</div>
       </div>
 
+      <!-- 7 -->
       <div class="project-card">
         <div class="project-stripe" style="background:#475569"></div>
         <div class="project-name">SharePoint & MS Teams Integration</div>
@@ -448,6 +477,7 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center}
         <div class="project-impact">Audit-ready document layer with cross-system approval workflows</div>
       </div>
 
+      <!-- 8 -->
       <div class="project-card">
         <div class="project-stripe" style="background:#e11d48"></div>
         <div class="project-name">Einstein CRM Analytics Implementation</div>
